@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07041c">
+  <title>Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <span class="swirl swirl-a"></span>
+    <span class="swirl swirl-b"></span>
+    <span class="swirl swirl-c"></span>
+    <span class="swirl swirl-d"></span>
+    <span class="swirl swirl-e"></span>
+  </div>
+
+  <main class="page">
+    <article class="flyer-wrap">
+      <h1 id="party-title" class="visually-hidden"></h1>
+      <img class="flyer" src="CADENDAYCADENDAY.png" alt="CADENDAYCADENDAY birthday invitation">
+      <p class="maps-wrap"><a id="maps-link" hidden>Open in Maps</a></p>
+    </article>
+
+    <article class="card" aria-labelledby="rsvp-heading">
+      <h2 id="rsvp-heading">RSVP</h2>
+      <p class="lead">Let us know if you're coming.</p>
+      <p id="rsvp-hint" class="hint" hidden></p>
+
+      <form id="rsvp-form">
+        <label class="field">
+          Name
+          <input name="name" type="text" maxlength="80" required autocomplete="name">
+        </label>
+
+        <fieldset>
+          <legend>Can you come?</legend>
+          <div class="choices">
+            <label><input type="radio" name="status" value="yes" checked> Yes</label>
+            <label><input type="radio" name="status" value="maybe"> Maybe</label>
+            <label><input type="radio" name="status" value="no"> No</label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          How many people
+          <input name="guest_count" type="number" min="1" max="10" value="1" required inputmode="numeric">
+        </label>
+
+        <label class="field">
+          <span>Note <span class="optional">(optional)</span></span>
+          <textarea name="message" maxlength="500" rows="3"></textarea>
+        </label>
+
+        <button type="submit">Send RSVP</button>
+      </form>
+
+      <p id="rsvp-notice" class="notice" role="status"></p>
+
+      <ul class="counts" aria-label="RSVP totals">
+        <li><strong id="count-yes">0</strong><span>coming</span></li>
+        <li><strong id="count-maybe">0</strong><span>maybe</span></li>
+        <li><strong id="count-no">0</strong><span>no</span></li>
+      </ul>
+      <p id="guest-status" class="hint" role="status"></p>
+      <p id="guest-empty" class="empty">No RSVPs yet.</p>
+      <ul id="guest-list" class="guest-list"></ul>
+    </article>
+
+    <article class="card" aria-labelledby="photos-heading">
+      <h2 id="photos-heading">Photos</h2>
+      <p class="lead">Share a picture.</p>
+      <p id="photo-hint" class="hint" hidden></p>
+
+      <form id="photo-form">
+        <label class="field">
+          Name
+          <input name="name" type="text" maxlength="80" required autocomplete="name">
+        </label>
+        <label class="field">
+          <span>Caption <span class="optional">(optional)</span></span>
+          <input name="caption" type="text" maxlength="200">
+        </label>
+        <label class="field">
+          Photo
+          <input name="photo" type="file" accept="image/*" required>
+        </label>
+        <button type="submit">Add photo</button>
+      </form>
+
+      <p id="photo-notice" class="notice" role="status"></p>
+      <p id="photo-status" class="hint" role="status"></p>
+      <p id="photo-empty" class="empty">No photos yet.</p>
+      <div id="gallery" class="gallery"></div>
+    </article>
+  </main>
+
+  <script src="party.config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
