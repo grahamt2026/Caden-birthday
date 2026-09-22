@@ -2,7 +2,7 @@
 
 A one-page invitation. GitHub Pages serves the files in `public/`. Supabase stores RSVPs and guest photos. Anyone with the link can open the page, RSVP, and upload a picture. There is no password and no accounts.
 
-The top of the page is the flyer image, `public/CADENDAYCADENDAY.png`. RSVP and photos sit underneath it.
+The top of the page is the flyer image, `public/flyer.jpg`. RSVP and photos sit underneath it.
 
 ## Fill in the invitation
 
@@ -20,7 +20,7 @@ window.PARTY = {
 };
 ```
 
-- `title` is the browser tab title. The picture guests see is `public/CADENDAYCADENDAY.png`. Replace that file to change the flyer.
+- `title` is the browser tab title. The picture guests see is `public/flyer.jpg`. Replace that file to change the flyer.
 - Leave `mapsUrl` as `https://maps.google.com/?q=...` until you have a real link. The maps link stays hidden under the flyer while that placeholder is there.
 - In Supabase, open **Project Settings → API**. Copy the project URL into `supabaseUrl` and the **anon public** key into `supabaseAnonKey`.
 - Do not put the service role key in this file.
