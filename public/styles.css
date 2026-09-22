@@ -207,6 +207,13 @@ a:hover { color: #fff; }
 
 .card h2 { text-align: center; }
 
+.contact p {
+  margin: 0.4rem 0 0;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
 .hint, .empty {
   margin: 0.75rem 0 0;
   color: var(--muted);
